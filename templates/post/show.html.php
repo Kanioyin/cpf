@@ -13,8 +13,8 @@ ob_start(); ?>
     </article>
 
     <ul class="action-list">
-        <li> <a href="<?= $router->generatePath('post-index') ?>">Back to list</a></li>
-        <li><a href="<?= $router->generatePath('post-edit', ['id'=> $post->getId()]) ?>">Edit</a></li>
+        <li> <a href="<?= $router->generatePath('post-index') ?>">Powrót do imprez</a></li>
+        <li><a href="<?= $router->generatePath('post-edit', ['id'=> $post->getId()]) ?>">Edycja</a></li>
     </ul>
 <?php $main = ob_get_clean();
 

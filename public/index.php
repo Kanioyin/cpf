@@ -38,6 +38,39 @@ switch ($action) {
         $controller = new \App\Controller\PostController();
         $view = $controller->deleteAction($_REQUEST['id'], $router);
         break;
+
+//        ------
+
+    case 'impreza-index':
+    case null:
+        $controller = new \App\Controller\imprezaControler();
+        $view = $controller->indexAction($templating, $router);
+        break;
+    case 'impreza-create':
+        $controller = new \App\Controller\imprezaControler();
+        $view = $controller->createAction($_REQUEST['impreza'] ?? null, $templating, $router);
+        break;
+    case 'impreza-edit':
+        if (! $_REQUEST['id']) {
+            break;
+        }
+        $controller = new \App\Controller\imprezaControler();
+        $view = $controller->editAction($_REQUEST['id'], $_REQUEST['impreza'] ?? null, $templating, $router);
+        break;
+    case 'impreza-show':
+        if (! $_REQUEST['id']) {
+            break;
+        }
+        $controller = new \App\Controller\imprezaControler();
+        $view = $controller->showAction($_REQUEST['id'], $templating, $router);
+        break;
+    case 'impreza-delete':
+        if (! $_REQUEST['id']) {
+            break;
+        }
+        $controller = new \App\Controller\imprezaControler();
+        $view = $controller->deleteAction($_REQUEST['id'], $router);
+        break;
     case 'info':
         $controller = new \App\Controller\InfoController();
         $view = $controller->infoAction();
